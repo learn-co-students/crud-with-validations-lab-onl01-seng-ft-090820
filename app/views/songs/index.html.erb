@@ -1,0 +1,29 @@
+
+<style>
+table, th, td{
+    border: 4px solid black;
+}
+</style>
+
+<h1>Songs Index</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Released</th>
+        <th>Release Year</th>
+        <th>Artist Name</th>
+        <th>Genre</th>
+    </tr>
+    <tbody>
+    <% @songs.each do |song| %>
+    <tr>
+        <td><%= song.title %></td>
+        <td><%= song.released %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
+    </tr>
+    <% end%>
+    </tbody>
+</table>
