@@ -1,7 +1,5 @@
 class SongsController < ApplicationController
 
-
-
     def index 
         @songs = Song.all 
     end 
@@ -33,14 +31,14 @@ class SongsController < ApplicationController
     end 
 
     def update
-        # binding.pry
         @song = Song.find_by(id: params[:id])
-       
-        if @song.update(song_params)
+        @song.update(song_params)
+
+        if @song.valid?
             redirect_to @song
         else
             render "edit"
-        end 
+        end
     end
 
 
