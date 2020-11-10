@@ -37,8 +37,7 @@ class SongsController < ApplicationController
         @song = Song.find_by(id: params[:id])
        
         if @song.update(song_params)
-            @song.save
-            redirect_to song_path(@song)
+            redirect_to @song
         else
             render "edit"
         end 
