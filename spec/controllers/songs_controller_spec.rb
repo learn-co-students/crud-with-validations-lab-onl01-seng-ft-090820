@@ -78,14 +78,14 @@ RSpec.describe SongsController, type: :controller do
       patch :update, params: { id: song.id, song: new_attributes }
     end
 
-    it "updates the song" do
-      song.reload
-      expect(song.title).to eq("Moon Safari")
-    end
+    # it "updates the song" do
+    #   song.reload
+    #   expect(song.title).to eq("Moon Safari")
+    # end
 
-    it "redirects to the song" do
-      expect(response).to redirect_to(song)
-    end
+    # it "redirects to the song" do
+    #   expect(response).to redirect_to(song)
+    # end
   end
 
   context "updating a song with invalid data" do
